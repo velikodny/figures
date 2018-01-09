@@ -1,29 +1,38 @@
 package main
 
-type Shape struct {
-	name string
+type Circle struct {
+	r int
+}
+
+type Square struct {
+	side int
 }
 
 type Figures interface {
-	Init()
 	Square()
 }
 
 func main() {
 
-	return returnSquare(new(Shape),"treug", "kvadr")
+	circle := new(Circle)
+	square := new(Square)
+
+	array := make([]Figures, 2)
+	array[0] = circle
+	array[0] = square
+
+
+	//figures := generateArray(circle, square)
+	//return returnSquare(new(Shape),"treug", "kvadr")
 
 }
 
-func returnSquare (s *Shape, figuresName ...string){
+func (c *Circle) Square() {
 
 }
 
-func generateArrayFigures (s *Figures) Init(userShape ...string){
+func (s *Square) Square() {
 
-	for _, shapeName := range userShape  {
-
-	}
 }
 
 
