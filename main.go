@@ -1,5 +1,9 @@
 package main
 
+import (
+	"github.com/TestProjects/figures/figures"
+)
+
 type Circle struct {
 	r int
 }
@@ -8,31 +12,30 @@ type Square struct {
 	side int
 }
 
-type Figures interface {
-	Square()
-}
+
 
 func main() {
 
 	circle := new(Circle)
 	square := new(Square)
 
-	array := make([]Figures, 2)
-	array[0] = circle
-	array[0] = square
+	var array []figures.Figures
+	array = append(array, circle, square)
 
+	//array := make([]figures.Figures, 2)
+	//array[0] = circle
+	//array[1] = square
+	figures.Print(array)
 
-	//figures := generateArray(circle, square)
-	//return returnSquare(new(Shape),"treug", "kvadr")
 
 }
 
-func (c *Circle) Square() {
-
+func (c *Circle) Square() int {
+	return 3
 }
 
-func (s *Square) Square() {
-
+func (s *Square) Square() int {
+	return 1
 }
 
 
